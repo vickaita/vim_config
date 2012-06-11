@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ln -s vimrc ~/.vimrc
-ln -s gvimrc ~/.gvimrc
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
 
 mkdir .vimswp
