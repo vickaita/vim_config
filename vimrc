@@ -343,6 +343,7 @@ au FileType python set tabstop=4 textwidth=79          " make python follow PEP8
 
 "" PHP
 au BufNewFile,BufRead *.ctp setfiletype php            " set .ctp files to edit like php for cakePHP
+au BufNewFile,BufRead *.thtml setfiletype php          " set .thtml files to edit like php for cakePHP
 autocmd FileType php,ctp set formatoptions+=tl autoindent
 autocmd FileType php,ctp set noexpandtab tabstop=4
 
