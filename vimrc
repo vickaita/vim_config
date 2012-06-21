@@ -246,14 +246,23 @@ nnoremap <C-L> :nohl<CR><C-L>
 let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
-" Command-T configuration
-"let g:CommandTMaxHeight=20
+" Fuzzy Finder
+map <Leader>ff :FufFile<CR>
+map <Leader>fc :FufCoverageFile<CR>
+map <Leader>fb :FufBuffer<CR>
+map <Leader>fl :FufLine<CR>
+map <Leader>fj :FufJumpList<CR>
+map <Leader>fd :FufDir<CR>
+map <Leader>fmd :FufBookmarkDir<CR>
+map <Leader>fmf :FufBookmarkFile<CR>
+map <Leader>fad :FufBookmarkDirAdd<CR>
+map <Leader>faf :FufBookmarkFileAdd<CR>
 
 " UltiSnips
-set runtimepath+=~/.vim/UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+"set runtimepath+=~/.vim/UltiSnips
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " Default sparkup binding clobbers tag completion and scrolling so change them
 " to something else
