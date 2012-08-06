@@ -22,3 +22,6 @@
 [submodule "bundle/L9"]
 	path = bundle/L9
 	url = git://github.com/vim-scripts/L9.git
+[submodule "bundle/vim-javascript-indent"]
+	path = bundle/vim-javascript-indent
+	url = https://github.com/pangloss/vim-javascript.git
