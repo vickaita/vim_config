@@ -345,10 +345,6 @@ autocmd FileType javascript set foldmethod=manual      " I like manual folding f
 autocmd FileType jspf set ft=jsp                       " So that jspf files work like jsp files
 
 
-"" Markdown
-autocmd FileType md set expandtab
-
-
 "" Python
 au FileType python set tabstop=4 textwidth=79          " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 

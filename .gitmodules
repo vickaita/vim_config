@@ -24,10 +24,7 @@
 	url = git://github.com/vim-scripts/L9.git
 [submodule "bundle/vim-javascript-indent"]
 	path = bundle/vim-javascript-indent
-	url = https://github.com/pangloss/vim-javascript.git
+	url = git://github.com/pangloss/vim-javascript.git
 [submodule "bundle/vim-jshint"]
 	path = bundle/vim-jshint
-	url = https://github.com/walm/jshint.vim.git
-[submodule "bundle/vim-pandoc"]
-	path = bundle/vim-pandoc
-	url = git@github.com:vim-pandoc/vim-pandoc.git
+	url = git://github.com/walm/jshint.vim.git
