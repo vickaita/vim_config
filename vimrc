@@ -363,6 +363,12 @@ autocmd FileType php,ctp set noexpandtab tabstop=4
 autocmd FileType make set noexpandtab shiftwidth=8
 
 
+"" Markdown
+autocmd FileType markdown set expandtab
+autocmd FileType markdown set smartindent
+autocmd FileType markdown set textwidth=80
+
+
 "" LESS CSS
 au BufNewFile,BufRead *.less set filetype=less
 
