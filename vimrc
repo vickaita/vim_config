@@ -271,8 +271,12 @@ map <Leader>faf :FufBookmarkFileAdd<CR>
 " to something else
 let g:sparkupNextMapping = '<c-y>'
 
-" JSLint
-map <Leader>l :JSLintToggle<CR>
+" JSHint
+" 'l' for 'lint'
+map <Leader>l :JSHint<CR>
+
+" Tagbar
+map <Leader>t :TagbarToggle<CR>
 
 """ end Plugins
 
