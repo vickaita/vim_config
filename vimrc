@@ -51,7 +51,7 @@ set ruler           " make sure that the ruler is displayed
 " set laststatus=0  " Status bar never
 " set laststatus=1  " Status bar only when more than one window
 set laststatus=2    " Status bar always
-set colorcolumn=81  " 80 column lines, highlight the 81st column
+set colorcolumn=81,121 " 80 column lines, highlight the 81st column
 
 
 " Indentation and Whitespace
@@ -277,6 +277,7 @@ map <Leader>l :JSHint<CR>
 
 " Tagbar
 map <Leader>t :TagbarToggle<CR>
+map <Leader>gt :TagbarOpen cjf<CR>
 
 """ end Plugins
 
