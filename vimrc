@@ -60,10 +60,11 @@ set tabstop=4       " 4 spaces
 set softtabstop=4   " 4 spaces
 set shiftwidth=4    " 4 spaces
 set noexpandtab
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
 
 " Shortcut to rapidly toggle `set list`
-nmap <leader>s :set list!<CR>
+" ws for `whitespace`
+nmap <leader>ws :set list!<CR>
 
 " Shortcut to toggle relative line numbers
 function! ToggleLineNumbers()
@@ -83,7 +84,7 @@ function! ToggleLineNumbers()
 	endif
 endfunction
 nmap <leader>r :call ToggleLineNumbers()<CR>
- 
+
 " Use the same symbols as TextMate for tabstops and EOLs
 
 " This should highlight extra space at the end of the line in red but does not
@@ -360,13 +361,6 @@ au BufNewFile,BufRead *.ctp setfiletype php            " set .ctp files to edit 
 au BufNewFile,BufRead *.thtml setfiletype php          " set .thtml files to edit like php for cakePHP
 autocmd FileType php,ctp set formatoptions+=tl autoindent
 autocmd FileType php,ctp set noexpandtab tabstop=4
-
-
-"" Makefile
-" in makefiles, don't expand tabs to spaces, since actual tab characters are
-" needed, and have indentation at 8 chars to be sure that all indents are tabs
-" (despite the mappings later):
-autocmd FileType make set noexpandtab shiftwidth=8
 
 
 "" Markdown
