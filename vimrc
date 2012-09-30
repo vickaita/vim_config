@@ -281,6 +281,9 @@ map <Leader>l :JSHint<CR>
 map <Leader>t :TagbarToggle<CR>
 map <Leader>gt :TagbarOpen cjf<CR>
 
+" Slime
+let g:slime_target = "tmux"
+
 """ end Plugins
 
 
