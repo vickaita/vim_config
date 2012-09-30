@@ -298,6 +298,10 @@ let vimclojure#ParenRainbow=1
 " Slime
 let g:slime_target = "tmux"
 
+" Scratch
+map <Leader>s :Scratch<CR>
+
+
 """ end Plugins
 
 

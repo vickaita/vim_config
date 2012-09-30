@@ -37,3 +37,6 @@
 [submodule "bundle/vim-slime"]
 	path = bundle/vim-slime
 	url = git://github.com/jpalardy/vim-slime.git
+[submodule "bundle/scratch"]
+	path = bundle/scratch
+	url = git://github.com/vim-scripts/scratch.vim.git
