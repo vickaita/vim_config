@@ -257,7 +257,7 @@ map <Leader>fc :FufCoverageFile<CR>
 map <Leader>fb :FufBuffer<CR>
 map <Leader>fl :FufLine<CR>
 map <Leader>fj :FufJumpList<CR>
-map <Leader>fd :FufDir<CR>
+map <Leader>fr :FufDir<CR>
 map <Leader>fmd :FufBookmarkDir<CR>
 map <Leader>fmf :FufBookmarkFile<CR>
 map <Leader>fad :FufBookmarkDirAdd<CR>
@@ -280,6 +280,20 @@ map <Leader>l :JSHint<CR>
 " Tagbar
 map <Leader>t :TagbarToggle<CR>
 map <Leader>gt :TagbarOpen cjf<CR>
+
+" vim clojure
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
+
+" Not using nailgun right now because I have found it to be somewhat buggy.
+"let vimclojure#WantNailgun = 1
+"let vimclojure#NailgunClient = "ng"
+
+" Use this if `ng` is not in the path
+"let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
 
 " Slime
 let g:slime_target = "tmux"
