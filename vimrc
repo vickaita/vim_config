@@ -60,7 +60,7 @@ set tabstop=4       " 4 spaces
 set softtabstop=4   " 4 spaces
 set shiftwidth=4    " 4 spaces
 set noexpandtab
-set listchars=tab:▸\ ,eol:¬,trail:·
+set listchars=tab:▸\ ,eol:¬,trail:•
 
 " Shortcut to rapidly toggle `set list`
 " ws for `whitespace`
