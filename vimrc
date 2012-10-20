@@ -298,6 +298,8 @@ let vimclojure#ParenRainbow=1
 " Slime
 let g:slime_target = "tmux"
 
+map <C-C><C-B> :%SlimeSend<CR>
+
 " Scratch
 map <Leader>s :Scratch<CR>
 
