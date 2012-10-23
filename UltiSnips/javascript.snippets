@@ -54,8 +54,12 @@ snippet if "if"
 if (${1:true}) {$0};
 endsnippet
 
-snippet log "console.log('___', ___)"
+snippet l "console.log('___', ___)"
 console.log('${1:var}', $1);
+endsnippet
+
+snippet log "console.log('___')"
+console.log('${1:var}');
 endsnippet
 
 # vim:ft=snippets:
