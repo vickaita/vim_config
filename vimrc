@@ -12,7 +12,7 @@ call pathogen#helptags()
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
-runtime! debian.vim
+" runtime! debian.vim
 
 " Remove ALL auto-commands
 ":autocmd!
