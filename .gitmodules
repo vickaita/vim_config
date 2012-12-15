@@ -40,3 +40,6 @@
 [submodule "bundle/scratch"]
 	path = bundle/scratch
 	url = git://github.com/vim-scripts/scratch.vim.git
+[submodule "bundle/scss-syntax"]
+	path = bundle/scss-syntax
+	url = git://github.com/cakebaker/scss-syntax.vim.git
