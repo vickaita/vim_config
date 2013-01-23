@@ -43,3 +43,6 @@
 [submodule "bundle/scss-syntax"]
 	path = bundle/scss-syntax
 	url = git://github.com/cakebaker/scss-syntax.vim.git
+[submodule "bundle/paredit.vim"]
+	path = bundle/paredit.vim
+	url = git://github.com/vim-scripts/paredit.vim.git
