@@ -46,3 +46,6 @@
 [submodule "bundle/paredit.vim"]
 	path = bundle/paredit.vim
 	url = git://github.com/vim-scripts/paredit.vim.git
+[submodule "bundle/NrrwRgn"]
+	path = bundle/NrrwRgn
+	url = git://github.com/chrisbra/NrrwRgn.git
