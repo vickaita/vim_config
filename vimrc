@@ -6,6 +6,11 @@
 " make changes after sourcing debian.vim since it alters the value of the
 " 'compatible' option.
 
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'FuzzyFinder')
+call add(g:pathogen_disabled, 'L9')
+
 " Pathogen
 call pathogen#infect()
 call pathogen#helptags()
@@ -168,18 +173,28 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " coming from other editors would expect.
 set nostartofline
 
+""" Paredit
+let g:paredit_electric_return = 0
+
+""" Clojure Static
+" let g:clojure_align_multiline_strings = 1
+
+""" Vim Foreplay
+nmap <Leader>e :%Eval<CR>
+nmap <Leader>y :A<CR>
+nmap <Leader>u :Require!<CR>
 
 
-
-
+""" Vim Fugitive
+"set statusline=%{fugitive#statusline()}
 
 
 """ Colorscheme Stuff
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-" set background=dark " Although the colorscheme should be setting this anyway
-set background=light " Although the colorscheme should be setting this anyway
+set background=dark " Although the colorscheme should be setting this anyway
+"set background=light " Although the colorscheme should be setting this anyway
 
 " for 256 color terminal
 "set t_Co=256
@@ -390,6 +405,11 @@ autocmd FileType php,ctp set noexpandtab tabstop=4
 autocmd FileType markdown set expandtab
 autocmd FileType markdown set smartindent
 autocmd FileType markdown set textwidth=80
+
+
+"" Sass
+autocmd FileType scss set iskeyword+=-
+autocmd FileType sass set iskeyword+=-
 
 
 "" LESS CSS
