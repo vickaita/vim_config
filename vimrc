@@ -71,6 +71,9 @@ set listchars=tab:▸\ ,eol:¬,trail:•
 " ws for `whitespace`
 nmap <leader>ws :set list!<CR>
 
+" Shortcut to remove trailing whitespace
+nmap <leader>wr :%s/\s\+$//g<CR>
+
 " Shortcut to toggle relative line numbers
 function! ToggleLineNumbers()
 	if !exists("s:ToggleLineNumbersState")
@@ -94,7 +97,7 @@ nmap <leader>r :call ToggleLineNumbers()<CR>
 
 " This should highlight extra space at the end of the line in red but does not
 " seem to work
-" Found at (http://vim.wikia.com/wiki/Highlight_unwanted_spaces) 
+" Found at (http://vim.wikia.com/wiki/Highlight_unwanted_spaces)
 "
 " highlight ExtraWhitespace ctermbg=red guibg=red
 " match ExtraWhitespace /\s\+$/
@@ -124,7 +127,7 @@ set backupdir=~/.vimswp
 set directory=~/.vimswp
 
 " Save undo
-set undofile  
+set undofile
 set undodir=~/.vimundo
 
 
@@ -193,8 +196,8 @@ nmap <Leader>u :Require!<CR>
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-set background=dark " Although the colorscheme should be setting this anyway
-"set background=light " Although the colorscheme should be setting this anyway
+"set background=dark " Although the colorscheme should be setting this anyway
+set background=light " Although the colorscheme should be setting this anyway
 
 " for 256 color terminal
 "set t_Co=256
@@ -231,17 +234,17 @@ noremap ' `
 " 	if !exists("s:ToggleQuickFixOpen")
 " 		let s:ToggleQuickFixOpen = 0
 " 	endif
-" 
+"
 " 	if s:ToggleQuickFixOpen == 0
 " 		:copen
 " 		let s:ToggleQuickFixOpen = 1
 " 	endif
-" 
+"
 " 	if s:ToggleQuickFixOpen == 1
 " 		:cclose
 " 		let s:ToggleQuickFixOpen = 0
 " 	endif
-" 
+"
 " endfunction
 " map <Leader>q call s:ToggleQuickFix
 " noremap <Leader>e :cNext<CR>
@@ -267,16 +270,16 @@ let NERDTreeIgnore=['\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " Fuzzy Finder
-map <Leader>ff :FufFile<CR>
-map <Leader>fc :FufCoverageFile<CR>
-map <Leader>fb :FufBuffer<CR>
-map <Leader>fl :FufLine<CR>
-map <Leader>fj :FufJumpList<CR>
-map <Leader>fr :FufDir<CR>
-map <Leader>fmd :FufBookmarkDir<CR>
-map <Leader>fmf :FufBookmarkFile<CR>
-map <Leader>fad :FufBookmarkDirAdd<CR>
-map <Leader>faf :FufBookmarkFileAdd<CR>
+"map <Leader>ff :FufFile<CR>
+"map <Leader>fc :FufCoverageFile<CR>
+"map <Leader>fb :FufBuffer<CR>
+"map <Leader>fl :FufLine<CR>
+"map <Leader>fj :FufJumpList<CR>
+"map <Leader>fr :FufDir<CR>
+"map <Leader>fmd :FufBookmarkDir<CR>
+"map <Leader>fmf :FufBookmarkFile<CR>
+"map <Leader>fad :FufBookmarkDirAdd<CR>
+"map <Leader>faf :FufBookmarkFileAdd<CR>
 
 " UltiSnips
 "set runtimepath+=~/.vim/UltiSnips
