@@ -15,6 +15,9 @@ call add(g:pathogen_disabled, 'L9')
 call pathogen#infect()
 call pathogen#helptags()
 
+" Set the leader
+let mapleader=" "
+
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
 " runtime! debian.vim
