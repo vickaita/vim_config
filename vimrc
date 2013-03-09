@@ -16,7 +16,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " Set the leader
-let mapleader=" "
+"let mapleader=" "
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
@@ -199,8 +199,8 @@ nmap <Leader>u :Require!<CR>
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-"set background=dark " Although the colorscheme should be setting this anyway
-set background=light " Although the colorscheme should be setting this anyway
+set background=dark " Although the colorscheme should be setting this anyway
+"set background=light " Although the colorscheme should be setting this anyway
 
 " for 256 color terminal
 "set t_Co=256
