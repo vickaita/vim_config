@@ -61,6 +61,7 @@ set ruler           " make sure that the ruler is displayed
 " set laststatus=1  " Status bar only when more than one window
 set laststatus=2    " Status bar always
 set colorcolumn=81,121 " 80 column lines, highlight the 81st column
+let g:Powerline_symbols = 'fancy'
 
 
 " Indentation and Whitespace
@@ -209,6 +210,9 @@ colors solarized
 
 "" end Colorscheme Stuff
 
+
+""" Ctrlp
+let g:ctrlp_custom_ignore = { 'dir': '\v(<out>|<repl>|<db>|<target>)' }
 
 
 
