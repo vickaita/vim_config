@@ -10,6 +10,9 @@
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'FuzzyFinder')
 call add(g:pathogen_disabled, 'L9')
+call add(g:pathogen_disabled, 'powerline')
+call add(g:pathogen_disabled, 'paredit.vim')
+call add(g:pathogen_disabled, 'vim-foreplay')
 
 " Pathogen
 call pathogen#infect()
@@ -70,6 +73,8 @@ set softtabstop=4   " 4 spaces
 set shiftwidth=4    " 4 spaces
 set noexpandtab
 set listchars=tab:▸\ ,eol:¬,trail:•
+
+set formatprg=par\ w80r
 
 " Shortcut to rapidly toggle `set list`
 " ws for `whitespace`
@@ -206,7 +211,8 @@ set background=dark " Although the colorscheme should be setting this anyway
 " for 256 color terminal
 "set t_Co=256
 "colorscheme wombat256
-colors solarized
+"colors solarized
+colors zenburn
 
 "" end Colorscheme Stuff
 
@@ -323,7 +329,7 @@ let vimclojure#ParenRainbow=1
 " Slime
 let g:slime_target = "tmux"
 
-map <C-C><C-B> :%SlimeSend<CR>
+map <C-C><C-K> :%SlimeSend<CR>
 
 " Scratch
 map <Leader>s :Scratch<CR>
