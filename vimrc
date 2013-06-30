@@ -317,7 +317,8 @@ let vimclojure#FuzzyIndent=1
 let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
+"let vimclojure#ParenRainbow=1
+
 
 " Not using nailgun right now because I have found it to be somewhat buggy.
 "let vimclojure#WantNailgun = 1
@@ -386,6 +387,12 @@ autocmd FileType perl set smartindent                  " for Perl programming, h
 "" ClojureScript
 autocmd BufNewFile,BufRead *.cljs set ft=clojure
 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
 "" CSS
 autocmd FileType css set smartindent                   " for CSS, also have things in braces indented
 autocmd FileType css set noexpandtab tabstop=4         " for CSS use genuine tab characters for indentation, to make files a few bytes smaller
@@ -430,6 +437,12 @@ autocmd FileType sass set iskeyword+=-
 
 "" LESS CSS
 au BufNewFile,BufRead *.less set filetype=less
+
+
+"" Ruby
+autocmd FileType ruby set expandtab
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
 
 
 
