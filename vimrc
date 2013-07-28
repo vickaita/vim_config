@@ -26,7 +26,8 @@ NeoBundle 'Shougo/vimproc'
 " My Bundles here:
 
 "NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'astashov/vim-ruby-debugger' " Vim plugin for debugging Ruby applications (using ruby-debug-ide gem)
+"NeoBundle 'astashov/vim-ruby-debugger' " Vim plugin for debugging Ruby applications (using ruby-debug-ide gem)
+"NeoBundle 'joonty/vdebug'
 NeoBundle 'L9'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Lokaltog/vim-powerline'
@@ -59,8 +60,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/scratch'
 NeoBundle 'walm/jshint.vim'
-
-NeoBundle 'lucapette/vim-ruby-doc' " Browse Ruby RSpec and Rails API docs quickly with Vim
 
 
 filetype plugin indent on     " required!
@@ -159,29 +158,13 @@ set notimeout ttimeout ttimeoutlen=200
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " 'press <Enter> to continue'
-" Or leave it as 1 to not waste a line of vertical space!
-set cmdheight=1
+set cmdheight=2
 
 
 " Use modeline overrides; Off for security reasons
 " set modeline
 " set modelines=10
 set nomodeline
-
-
-""" Paredit
-let g:paredit_electric_return = 0
-
-""" Clojure Static
-" let g:clojure_align_multiline_strings = 1
-
-""" vim-foreplay
-nmap <Leader>e :%Eval<CR>
-nmap <Leader>y :A<CR>
-nmap <Leader>u :Require!<CR>
-
-""" Vim Fugitive
-"set statusline=%{fugitive#statusline()}
 
 
 """ Colorscheme Stuff
@@ -242,21 +225,23 @@ let g:ctrlp_custom_ignore = { 'dir': '\v(<out>|<repl>|<db>|<target>)' }
 
 
 " Ruby key bindings and plugin configuration
-let g:ruby_debugger_no_maps = 1
+"let g:ruby_debugger_debug_mode = 1
+"let g:ruby_debugger_no_maps = 1
+"map <LocalLeader>xb  :call g:RubyDebugger.toggle_breakpoint()<CR>
+"map <LocalLeader>xv  :call g:RubyDebugger.open_variables()<CR>
+"map <LocalLeader>xm  :call g:RubyDebugger.open_breakpoints()<CR>
+"map <LocalLeader>xt  :call g:RubyDebugger.open_frames()<CR>
+"map <LocalLeader>xs  :call g:RubyDebugger.step()<CR>
+"map <LocalLeader>xf  :call g:RubyDebugger.finish()<CR>
+"map <LocalLeader>xn  :call g:RubyDebugger.next()<CR>
+"map <LocalLeader>xc  :call g:RubyDebugger.continue()<CR>
+"map <LocalLeader>xe  :call g:RubyDebugger.exit()<CR>
+"map <LocalLeader>xd  :call g:RubyDebugger.remove_breakpoints()<CR>
 
 
-" Tagbar
-nnoremap <leader>t :TagbarToggle<CR>
-
-" Gundo
-nnoremap <leader>g :GundoToggle<CR>
-
-
-
-""" Remap
 
 " fix yank
-map Y y$
+inoremap Y y$
 
 " make F1 the same as esc
 map <F1> <Esc>
@@ -275,13 +260,15 @@ nnoremap <C-L> :nohl<CR><C-L>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
 
-""" end Remap
 
 
+" Tagbar
+nnoremap <leader>t :TagbarToggle<CR>
+
+" Gundo
+nnoremap <leader>g :GundoToggle<CR>
 
 
-
-""" Plugins
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
@@ -292,12 +279,23 @@ map <Leader>n :NERDTreeToggle<CR>
 " 'l' for 'lint'
 map <Leader>l :JSHint<CR>
 
-" vim clojure
+""" Vim Clojure Static
 let vimclojure#FuzzyIndent=1
 let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 "let vimclojure#ParenRainbow=1
+" let g:clojure_align_multiline_strings = 1
+
+" Fireplace
+nmap <C-J> <Plug>FireplacePrintab
+nmap <Leader>e :%Eval<CR>
+nmap <Leader>y :A<CR>
+nmap <Leader>u :Require!<CR>
+
+
+""" Paredit
+let g:paredit_electric_return = 0
 
 
 " Slime
@@ -307,9 +305,6 @@ map <C-C><C-K> :%SlimeSend<CR>
 
 " Scratch
 map <Leader>s :Scratch<CR>
-
-
-""" end Plugins
 
 
 
