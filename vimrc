@@ -179,6 +179,7 @@ set t_Co=256
 "colorscheme wombat256
 "colors solarized
 colors zenburn
+highlight ColorColumn term=reverse ctermbg=238
 
 "" end Colorscheme Stuff
 
