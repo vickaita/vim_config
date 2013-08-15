@@ -243,7 +243,7 @@ let g:ctrlp_custom_ignore = { 'dir': '\v(<out>|<repl>|<db>|<target>)' }
 
 
 " fix yank
-inoremap Y y$
+nnoremap Y y$
 
 " make F1 the same as esc
 map <F1> <Esc>
@@ -252,15 +252,15 @@ imap <F1> <Esc>
 " swap ' and `
 " I prefer ' to take me to the same character since it is easier to type and I
 " usually want that rather than just the same line
-noremap ` '
-noremap ' `
+nnoremap ` '
+nnoremap ' `
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
 
 
 
