@@ -30,19 +30,19 @@ NeoBundle 'Shougo/vimproc'
 "NeoBundle 'joonty/vdebug'
 NeoBundle 'L9'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'cakebaker/scss-syntax'
 NeoBundle 'guns/vim-clojure-static'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'kien/rainbow_parentheses.vim'
+"NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'kovisoft/paredit' " Official mirror of Paredit versions released on vim.org
 NeoBundle 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by class etc.
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'mileszs/ack.vim'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
+"NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -181,6 +181,7 @@ set t_Co=256
 "colors solarized
 colors zenburn
 highlight ColorColumn term=reverse ctermbg=238
+"colors github
 
 "" end Colorscheme Stuff
 
@@ -311,7 +312,6 @@ map <Leader>s :Scratch<CR>
 
 
 
-
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
@@ -337,12 +337,12 @@ autocmd FileType c set formatoptions+=ro
 autocmd FileType perl set smartindent                  " for Perl programming, have things in braces indenting themselves
 
 "" Clojure[Script]
-autocmd BufNewFile,BufRead *.cljs set ft=clojure
+"autocmd BufNewFile,BufRead *.cljs set ft=clojure
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 
 "" CSS
@@ -352,7 +352,7 @@ autocmd FileType css set noexpandtab tabstop=4         " for CSS use genuine tab
 
 "" HTML
 autocmd FileType html set formatoptions+=tl autoindent " for HTML, generally format text, but if a long line has been created leave it alone when editing:
-autocmd FileType html set noexpandtab tabstop=4        " for HTML use genuine tab characters for indentation, to make files a few bytes smaller
+"autocmd FileType html set noexpandtab tabstop=4        " for HTML use genuine tab characters for indentation, to make files a few bytes smaller
 
 
 "" JavaScript
@@ -360,6 +360,7 @@ autocmd FileType js set autoindent                     " for JavaScript, have th
 autocmd BufNewFile,BufRead *.json set ft=javascript    " Syntax highlighting for JSON files
 autocmd FileType javascript set foldmethod=manual      " I like manual folding for my JavaScript
 let g:used_javascript_libs = 'underscore,backbone,jquery'
+autocmd FileType js nnoremap K :TernType<CR>
 
 
 "" JSP
