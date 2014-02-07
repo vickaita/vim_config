@@ -1,10 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"-------------------<o-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-o>----------------------"
-"-'-'-'-'-'-'-'-'-'-'-o-------------------------------o-'-'-'-'-'-'-'-'-'-'-'-'"
 "-<><><><><><><><><><>-| VickAita's Vim Configuration |-<><><><><><><><><><><>-"
-"-,-,-,-,-,-,-,-,-,-,-o-------------------------------o-,-,-,-,-,-,-,-,-,-,-,-,"
-"-------------------<o-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|-o>----------------------"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " These lines are required for NeoBundle.
 set nocompatible
@@ -27,25 +21,31 @@ NeoBundle 'Shougo/vimproc'
 
 "NeoBundle 'airblade/vim-gitgutter'
 "NeoBundle 'astashov/vim-ruby-debugger' " Vim plugin for debugging Ruby applications (using ruby-debug-ide gem)
+"NeoBundle 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
 "NeoBundle 'joonty/vdebug'
 NeoBundle 'L9'
-NeoBundle 'Lokaltog/vim-easymotion'
-"NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'cakebaker/scss-syntax'
 NeoBundle 'guns/vim-clojure-static'
+NeoBundle 'guns/vim-clojure-highlight'
+"NeoBundle 'guns/vim-sexp' " Precision Editing for S-expressions
+"NeoBundle 'guns/vim-slamhound' " Slamhound integration for vim.
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'kien/ctrlp.vim'
 "NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'kovisoft/paredit' " Official mirror of Paredit versions released on vim.org
+"NeoBundle 'kovisoft/paredit' " Official mirror of Paredit versions released on vim.org
+NeoBundle 'https://bitbucket.org/kovisoft/paredit' ", {'name' : 'paredit-hg'}
 NeoBundle 'majutsushi/tagbar' " Vim plugin that displays tags in a window, ordered by class etc.
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'mileszs/ack.vim'
 "NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'rking/ag.vim'
+"NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/nerdcommenter'
+let NERDTreeQuitOnOpen = 1
 let NERDTreeHijackNetrw = 0
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -57,10 +57,12 @@ NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-repeat'
+"NeoBundle 'tpope/vim-sexp-mappings-for-regular-people'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/scratch'
-NeoBundle 'walm/jshint.vim'
+"NeoBundle 'walm/jshint.vim'
 
 
 filetype plugin indent on     " required!
@@ -83,9 +85,9 @@ set noshowmode " Don't show -- INSERT -- in the modeline
 
 " Searching
 set hlsearch        " Highlight search results
-set incsearch		" Incremental search
-set ignorecase		" Do case insensitive matching
-set smartcase		" Do smart case matching
+set incsearch       " Incremental search
+set ignorecase      " Do case insensitive matching
+set smartcase       " Do smart case matching
 
 
 " Rulers and line numbers
@@ -95,14 +97,15 @@ set ruler           " make sure that the ruler is displayed
 " set laststatus=1  " Status bar only when more than one window
 set laststatus=2    " Status bar always
 set colorcolumn=81,121 " 80 column lines, highlight the 81st column
-let g:Powerline_symbols = 'fancy'
 
 " Indentation and Whitespace
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-set listchars=tab:▸\ ,eol:¬,trail:•
+"set listchars=tab:▸\ ,eol:¬,trail:•
+set listchars=tab:▸\ ,trail:•
+set list!
 set formatprg=par\ w80r
 
 " Stop certain movements from always going to the first character of a line.
@@ -159,7 +162,7 @@ set notimeout ttimeout ttimeoutlen=200
 
 " Set the command window height to 2 lines, to avoid many cases of having to
 " 'press <Enter> to continue'
-set cmdheight=2
+set cmdheight=1
 
 
 " Use modeline overrides; Off for security reasons
@@ -172,15 +175,15 @@ set nomodeline
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-set background=dark " Although the colorscheme should be setting this anyway
-"set background=light " Although the colorscheme should be setting this anyway
+"set background=dark " Although the colorscheme should be setting this anyway
+set background=light " Although the colorscheme should be setting this anyway
 
 " for 256 color terminal
 set t_Co=256
 "colorscheme wombat256
-"colors solarized
-colors zenburn
-highlight ColorColumn term=reverse ctermbg=238
+colors solarized
+"colors zenburn
+"highlight ColorColumn term=reverse ctermbg=238
 "colors github
 
 "" end Colorscheme Stuff
@@ -241,8 +244,6 @@ let g:ctrlp_custom_ignore = { 'dir': '\v(<out>|<repl>|<db>|<target>)' }
 "map <LocalLeader>xe  :call g:RubyDebugger.exit()<CR>
 "map <LocalLeader>xd  :call g:RubyDebugger.remove_breakpoints()<CR>
 
-
-
 " fix yank
 nnoremap Y y$
 
@@ -259,6 +260,8 @@ nnoremap ' `
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+let maplocalleader = ","
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cnoremap w!! %!sudo tee > /dev/null %
@@ -347,7 +350,7 @@ autocmd FileType perl set smartindent                  " for Perl programming, h
 
 "" CSS
 autocmd FileType css set smartindent                   " for CSS, also have things in braces indented
-autocmd FileType css set noexpandtab tabstop=4         " for CSS use genuine tab characters for indentation, to make files a few bytes smaller
+"autocmd FileType css set noexpandtab tabstop=4         " for CSS use genuine tab characters for indentation, to make files a few bytes smaller
 
 
 "" HTML
@@ -375,7 +378,7 @@ au FileType python set tabstop=4 textwidth=79          " make python follow PEP8
 au BufNewFile,BufRead *.ctp setfiletype php            " set .ctp files to edit like php for cakePHP
 au BufNewFile,BufRead *.thtml setfiletype php          " set .thtml files to edit like php for cakePHP
 autocmd FileType php,ctp set formatoptions+=tl autoindent
-autocmd FileType php,ctp set noexpandtab tabstop=4
+"autocmd FileType php,ctp set noexpandtab tabstop=4
 
 
 "" Markdown
