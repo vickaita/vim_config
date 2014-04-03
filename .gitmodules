@@ -82,3 +82,6 @@
 [submodule "bundle/vim-fireplace"]
 	path = bundle/vim-fireplace
 	url = git://github.com/tpope/vim-fireplace.git
+[submodule "bundle/neobundle.vim"]
+	path = bundle/neobundle.vim
+	url = git@github.com:Shougo/neobundle.vim.git
