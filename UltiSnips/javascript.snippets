@@ -62,4 +62,14 @@ snippet log "console.log('___')"
 console.log('${1:var}');
 endsnippet
 
+snippet lJ "console.log('JSON.stringify(___)', JSON.stringify(___))"
+console.log('JSON.stringify(${1:var})', JSON.stringify($1));
+endsnippet
+
+snippet def "define an AMD module"
+define(function (require, module) {
+  ${0:// TODO: ...}
+});
+endsnippet
+
 # vim:ft=snippets:
