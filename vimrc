@@ -20,11 +20,7 @@ NeoBundle 'Shougo/vimproc'
 " My Bundles here:
 
 "NeoBundle 'airblade/vim-gitgutter'
-"NeoBundle 'astashov/vim-ruby-debugger' " Vim plugin for debugging Ruby applications (using ruby-debug-ide gem)
-"NeoBundle 'bling/vim-airline' " lean & mean status/tabline for vim that's light as air
-"NeoBundle 'joonty/vdebug'
 NeoBundle 'L9'
-"NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'JulesWang/css.vim'
@@ -44,7 +40,6 @@ NeoBundle 'mileszs/ack.vim'
 "NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
-"NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 let NERDTreeQuitOnOpen = 1
 let NERDTreeHijackNetrw = 0
@@ -195,7 +190,7 @@ colors solarized
 
 """ Ctrlp
 let g:ctrlp_map = '<c-x><c-f>'
-let g:ctrlp_custom_ignore = { 'dir': '\v(<out>|<repl>|<db>|<target>)' }
+let g:ctrlp_custom_ignore = { 'dir': '\v(<out>|<repl>|<db>|<target>|<resources/public>)' }
 "let g:ctrlp_prompt_mappings = {
 "  \ 'PrtBS()':              ['<bs>', '<c-]>'],
 "  \ 'PrtDelete()':          ['<del>'],
