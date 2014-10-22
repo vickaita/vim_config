@@ -15,7 +15,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-"NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
@@ -61,10 +60,12 @@ NeoBundle 'sjl/gundo.vim'
 "NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'tpope/vim-classpath'
+NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-leiningen'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-repeat'
 "NeoBundle 'tpope/vim-sexp-mappings-for-regular-people'
